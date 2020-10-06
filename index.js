@@ -8,6 +8,7 @@ const resolvers = require("./graphql/resolvers/index");
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: ({ req }) => ({ req }),
 });
 
 mongoose
